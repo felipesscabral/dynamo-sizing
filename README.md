@@ -2,7 +2,13 @@
 
 Script bash para coleta completa de métricas de sizing de tabelas **Amazon DynamoDB**, com foco em subsidiar processos de migração e dimensionamento para **MongoDB Atlas**.
 
+Script bash de código aberto, disponibilizado exclusivamente como exemplo, para coleta completa de métricas de sizing de tabelas Amazon DynamoDB, com foco em subsidiar processos de migração e dimensionamento para MongoDB Atlas.
+
 Utiliza exclusivamente **AWS CLI v2** e **jq** — sem dependências adicionais.
+
+Este material é fornecido apenas para fins de referência. Sua utilização, adaptação e execução são de inteira responsabilidade do usuário. Os desenvolvedores e mantenedores deste código não assumem qualquer responsabilidade por problemas, falhas, impactos, perdas ou danos decorrentes de seu uso, inclusive em ambientes de teste ou produção.
+
+
 
 ---
 
