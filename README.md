@@ -8,7 +8,14 @@ Utiliza exclusivamente **AWS CLI v2** e **jq** — sem dependências adicionais.
 
 Este material é fornecido apenas para fins de referência. Sua utilização, adaptação e execução são de inteira responsabilidade do usuário. Os desenvolvedores e mantenedores deste código não assumem qualquer responsabilidade por problemas, falhas, impactos, perdas ou danos decorrentes de seu uso, inclusive em ambientes de teste ou produção.
 
+---
 
+## Notas
+
+- O script é **somente leitura** e não realiza nenhuma alteração nas tabelas
+- Tabelas com muitos GSIs podem levar mais tempo devido às chamadas CloudWatch por índice
+- A janela de 60 dias pode ser ajustada alterando a variável `CW_DAYS` no início do script
+- Em contas com centenas de tabelas, considere filtrar por prefixo de nome adaptando o trecho de `list-tables`
 
 ---
 
@@ -213,11 +220,4 @@ aws dynamodb list-tables --region $AWS_REGION --output table
 **Métricas CloudWatch retornam zero**
 Tabelas com baixo tráfego podem não ter datapoints em todos os períodos. Isso é esperado — o script registra `0` nesses casos.
 
----
 
-## Notas
-
-- O script é **somente leitura** e não realiza nenhuma alteração nas tabelas
-- Tabelas com muitos GSIs podem levar mais tempo devido às chamadas CloudWatch por índice
-- A janela de 60 dias pode ser ajustada alterando a variável `CW_DAYS` no início do script
-- Em contas com centenas de tabelas, considere filtrar por prefixo de nome adaptando o trecho de `list-tables`
